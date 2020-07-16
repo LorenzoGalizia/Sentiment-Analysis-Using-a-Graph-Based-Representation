@@ -10,7 +10,7 @@ tweet_files_sinistra = ['Italian_Politics/Renzi/Renzi_2018-01-12.json',
                'Italian_Politics/centrosinistra/centrosinistra_2018-01-15.json']
 tweets = []
 for file in tweet_files_sinistra:
-    with open(file, 'r') as f:
+    with open("Data/" + file, 'r') as f:
         for line in f.readlines():
             tweets.append(json.loads(line))
             
@@ -32,7 +32,7 @@ tweet_files_destra = ['Italian_Politics/Meloni/Meloni_2018-01-15.json',
 
 tweets = []
 for file in tweet_files_destra:
-    with open(file, 'r') as f:
+    with open("Data/" + file, 'r') as f:
         for line in f.readlines():
             tweets.append(json.loads(line))
             
@@ -49,7 +49,7 @@ tweet_files_m5s = ['Italian_Politics/DiMaio/DiMaio_2018-01-15.json',
 
 tweets = []
 for file in tweet_files_m5s:
-    with open(file, 'r') as f:
+    with open("Data/" + file, 'r') as f:
         for line in f.readlines():
             tweets.append(json.loads(line))
             
@@ -62,4 +62,4 @@ print(df_m5s.shape)
 df = pd.concat([df_sinistra, df_destra, df_m5s]).reset_index()
 df = df[["index", "topic", "text"]]
 print(df)
-df.to_csv("new_tweets_ITA.csv")
+df.to_csv("Data/new_tweets_ITA.csv")
