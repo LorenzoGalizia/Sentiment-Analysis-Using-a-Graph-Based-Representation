@@ -11,10 +11,10 @@ def load_api():
     ''' Function that loads the twitter API after authorizing
         the user. '''
     cfg = {
-        "consumer_key": "Yc41YpcBJAy1netXoAY7oagAs",
-        "consumer_secret": "2C0QyDFyDcqUpSXabUbKjIog9MebvZEXEJUjzrpSLRbn9ShUNw",
-        "access_token": "369043159-HoprCg16IdnkbwHD2OsG4KJGkUbz9R8PgTbYlevF",
-        "access_token_secret": "C1ZYNCLohh04p1UyyMKyAZYNxYxloDDRw1PsKCkOPnNF4"
+        "consumer_key": "",
+        "consumer_secret": "",
+        "access_token": "",
+        "access_token_secret": ""
     }
     
     auth = OAuthHandler(cfg["consumer_key"], cfg["consumer_secret"])
