@@ -7,14 +7,22 @@ import time
 import pandas as pd
 
 
+import json
+
+
 def load_api():
     ''' Function that loads the twitter API after authorizing
         the user. '''
+
+    with open('project_secrets.json') as f:
+        secrets = json.load(f)
+        tw_secrets = secrets["twitter"]
+    
     cfg = {
-        "consumer_key": "",
-        "consumer_secret": "",
-        "access_token": "
-        "access_token_secret": ""
+        "consumer_key": tw_secrets["consumer_key"],
+        "consumer_secret": tw_secrets["consumer_secret"],
+        "access_token": tw_secrets["access_token"],
+        "access_token_secret": tw_secrets["access_token_secret"]
     }
     
     auth = OAuthHandler(cfg["consumer_key"], cfg["consumer_secret"])
