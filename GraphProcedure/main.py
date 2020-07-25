@@ -45,16 +45,17 @@ mat_close = [list(graph.vs()), graph.vs['index'], graph.vs['name'],
 data_close = pd.DataFrame(np.transpose(mat_close), columns = ["obj", "label", "word", 
                           "betweenness", "degree", "eigenvector", "closeness"])
 
+path_cent = "SentimentPrediction/Centralities/"
 if procedure == "semeval":
-    if test == "SemEval2014-Task9-subtaskAB-test-to-download/SemEvalBfinal.txt":
-        data_close.to_csv("centralities_2014.csv")
-    elif test == "SemEval2013_task2_test_fixed/gold/complete_test.tsv":
-        data_close.to_csv("centralities_2013.csv")
-    elif test == "SemEval2013_task2_test_fixed/gold/sms-test-gold-B.tsv":
-        data_close.to_csv("centralities_SMS_2013.csv")
+    if test == "Data/SemEval2014-Task9-subtaskAB-test-to-download/SemEvalBfinal.txt":
+        data_close.to_csv(path_cent + "centralities_2014.csv")
+    elif test == "Data/SemEval2013_task2_test_fixed/gold/complete_test.tsv":
+        data_close.to_csv(path_cent + "centralities_2013.csv")
+    elif test == "Data/SemEval2013_task2_test_fixed/gold/sms-test-gold-B.tsv":
+        data_close.to_csv(path_cent + "centralities_SMS_2013.csv")
 elif procedure == "italianpolitics":
-    data_close.to_csv("centralities_ITA.csv")
+    data_close.to_csv(path_cent + "centralities_ITA.csv")
 elif procedure == "window":
-    data_close.to_csv("centralities_window.csv")
+    data_close.to_csv(path_cent + "centralities_window.csv")
 
 print("Done ;)")

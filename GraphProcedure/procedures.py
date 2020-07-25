@@ -68,11 +68,11 @@ class Procedures():
         df_test = df_test.dropna(0)
         
         if test == "SemEval2014-Task9-subtaskAB-test-to-download/SemEvalBfinal.txt":
-            df_test.to_csv("Data/corpus_df_test_2014.csv")
+            df_test.to_csv("SentimentPrediction/Corpora/corpus_df_test_2014.csv")
         elif test == "SemEval2013_task2_test_fixed/gold/complete_test.tsv":
-            df_test.to_csv("Data/corpus_df_test_2013.csv")
+            df_test.to_csv("SentimentPrediction/Corpora/corpus_df_test_2013.csv")
         elif test == "SemEval2013_task2_test_fixed/gold/sms-test-gold-B.tsv":
-            df_test.to_csv("Data/corpus_df_test_SMS_2013.csv")
+            df_test.to_csv("SentimentPrediction/Corpora/corpus_df_test_SMS_2013.csv")
         
         df = pd.concat([df_train, df_test], axis=0).reset_index()
 
@@ -120,7 +120,7 @@ class Procedures():
         df_test = df_test.replace('nan', np.nan)
         df_test = df_test.dropna(0)
         
-        df_test.to_csv("corpus_ITA_new.csv")
+        df_test.to_csv("SentimentPrediction/Corpora/corpus_ITA_new.csv")
         
         df = pd.concat([df_train, df_test], axis=0).reset_index()
 
@@ -144,7 +144,7 @@ class Procedures():
         df_train = df_train.replace('nan', np.nan)
         df_train = df_train.dropna(0)
         
-        df_train.to_csv("Data/corpus_df_window.csv")
+        df_train.to_csv("SentimentPrediction/Corpora/corpus_df_window.csv")
         
         print("        * Dimensions: %s" % (df_train.shape,))
         print("    - Preprocessing TEST dataset...")
@@ -167,7 +167,7 @@ class Procedures():
         df_test = df_test.replace('nan', np.nan)
         df_test = df_test.dropna(0)
         
-        df_test.to_csv("Data/corpus_df_test_2014_window.csv")
+        df_test.to_csv("SentimentPrediction/Corpora/corpus_df_test_2014_window.csv")
         
         df = pd.concat([df_train, df_test], axis=0).reset_index()
 
